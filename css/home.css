@@ -384,7 +384,8 @@
   transition: transform 0.3s linear;
   will-change: transform;
 }
-.thumbnails__btn {
+.thumbnails__btn,
+.section-header__btn {
   align-self: end;
 }
 .optimization__person {
