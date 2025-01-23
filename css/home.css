@@ -491,12 +491,12 @@
 .pricing__block {
   margin-block-end: 6.25rem; /* 100/16 */
 }
-.pricing__title {
+.block__title {
   font-size: 3.75rem; /* 60/16 */
   inline-size: fit-content;
   line-height: normal;
 }
-.pricing__logo {
+.block__logo {
   flex-basis: 20.3125rem; /* 325/16 */
   aspect-ratio: 325 / 69;
   flex-shrink: 0;
@@ -1120,10 +1120,10 @@
   .optimization__icons {
     margin-block-end: 1.5rem; /* 24/16 */
   }
-  .pricing__title {
+  .block__title {
     font-size: 2rem; /* 32/16 */
   }
-  .pricing__logo {
+  .block__logo {
     flex-basis: 11.25rem; /* 180/16 */
   }
   .pricing__block {
@@ -1178,10 +1178,10 @@
   .optimization__icons li {
     flex-basis: 30%;
   }
-  .pricing__title {
+  .block__title {
     font-size: 1.5rem; /* 24/16 */
   }
-  .pricing__logo {
+  .block__logo {
     flex-basis: 8.5625rem; /* 137/16 */
   }
   .columns-model__price {
