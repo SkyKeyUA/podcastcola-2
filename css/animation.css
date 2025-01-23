@@ -1,0 +1,5 @@
+@keyframes button-background-rotate {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}

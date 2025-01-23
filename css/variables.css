@@ -1,0 +1,38 @@
+:root {
+  /* fonts */
+  --main-font-family: 'Montserrat', sans-serif;
+
+  /* colors */
+  --primary-text: #ffffff;
+  --primary-light-bg: #2c1a56;
+  --primary-dark-bg: #160844;
+  --label-text: #ff00ff;
+  --subtitle-text: #00ffff;
+
+  --header-bg: #3d3d3d;
+  --header-menu: #e4e3ff;
+  --header-btn: #5450f6;
+  --header-shadow-btn: #231fec99;
+  --header-box-shadow-btn: 0px 0px 10px 0px var(--header-shadow-btn);
+
+  --button-bg: #000;
+  --button-box-shadow: -75px 160px 49px 0px rgba(0, 0, 0, 0.01),
+    -48px 102px 45px 0px rgba(0, 0, 0, 0.04), -27px 58px 38px 0px rgba(0, 0, 0, 0.15),
+    -12px 26px 28px 0px rgba(0, 0, 0, 0.25), -3px 6px 16px 0px rgba(0, 0, 0, 0.29);
+
+  --hero-bg: #311a5720;
+  --brands-bg: #1f1b56;
+  --img-bg: #2a205a;
+  --car-first-bg: #1c0a48;
+  --car-second-bg: #240d64;
+  --car-third-bg: #1b0b4a;
+  --car-third-bg-bottom: #1c1555;
+
+  --pricing-second-card-bg: #292434;
+  --card-first-title: #3a006a;
+
+  --steps-line: rgba(0, 255, 255, 0.2);
+
+  --hover-icon: brightness(0) invert(28%) sepia(78%) saturate(3802%) hue-rotate(236deg)
+    brightness(98%) contrast(97%);
+}
