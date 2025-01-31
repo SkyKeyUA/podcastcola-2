@@ -256,6 +256,7 @@
   }
   .steps__item {
     flex-direction: column;
+    text-align: center;
   }
 }
 @media (min-width: 78.1238em) {
