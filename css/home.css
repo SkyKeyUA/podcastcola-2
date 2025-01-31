@@ -1082,7 +1082,8 @@
   .optimization,
   .thumbnails,
   .brands,
-  .pricingб .car {
+  .pricing,
+  .car {
     padding-block: 2.5rem; /* 40/16 */
   }
   .hero__label,
