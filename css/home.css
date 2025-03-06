@@ -404,18 +404,19 @@
   border-radius: 50%;
 }
 .thumbnails__videos {
-  column-gap: 4.65%; /* 40/16 */
-  row-gap: 1.875rem; /* 30/16 */
-  max-inline-size: 53.75rem; /* 860/16 */
+  display: grid;
+  gap: 1.5rem; /* 24/16 */
 }
-.thumbnails__videos a {
-  max-inline-size: 11.5625rem; /* 185/16 */
-  aspect-ratio: 185 / 165;
+.thumbnails__videos li:nth-of-type(3n + 1) iframe {
   inline-size: 100%;
+  max-inline-size: 37.75rem; /* 604/16 */
+  aspect-ratio: 604 / 407;
 }
-.thumbnails__videos li:nth-of-type(3n + 1) a {
-  max-inline-size: 39.6875rem; /* 635/16 */
-  aspect-ratio: 635 / 427;
+.thumbnails__videos li:nth-of-type(3n) iframe,
+.thumbnails__videos li:nth-of-type(3n + 2) iframe {
+  inline-size: 100%;
+  max-inline-size: 15.25rem; /* 244/16 */
+  aspect-ratio: 244 / 186;
 }
 .brands {
   padding-block: 6.25rem 3.125rem; /* 50/16 */
@@ -483,8 +484,6 @@
 .pricing {
   padding-block: 3.125rem 6.25rem; /* 50/16 */
   background-color: var(--brands-bg);
-}
-.pricing__container {
 }
 .pricing__block {
   margin-block-end: 6.25rem; /* 100/16 */
@@ -604,7 +603,7 @@
   z-index: 1;
   width: fit-content;
 }
-.car__list {
+.car__list ul {
   position: relative;
   z-index: 1;
   display: flex;
@@ -615,15 +614,46 @@
   font-weight: 700;
   line-height: normal;
 }
-.car__item {
+.car__list ul li {
   display: flex;
   align-items: center;
   column-gap: 1.875rem; /* 30/16 */
 }
-.car__icon {
+.car__list ul li::before {
+  content: '';
   flex-basis: 3.5rem; /* 56/16 */
   aspect-ratio: 1;
   flex-shrink: 0;
+}
+.car__list--white ul li:nth-child(3n + 1)::before {
+  background: url('../img/icons/car-play-white.svg') center / contain no-repeat;
+}
+.car__list--white ul li:nth-child(3n + 2)::before {
+  background: url('../img/icons/car-ball-white.svg') center / contain no-repeat;
+}
+.car__list--white ul li:nth-child(3n)::before {
+  background: url('../img/icons/car-subscibers-white.svg') center / contain no-repeat;
+}
+.car__list--blue ul li:nth-child(3n + 1)::before {
+  background: url('../img/icons/car-play-blue.svg') center / contain no-repeat;
+}
+.car__list--blue ul li:nth-child(3n + 2)::before {
+  background: url('../img/icons/car-ball-blue.svg') center / contain no-repeat;
+}
+.car__list--blue ul li:nth-child(3n)::before {
+  background: url('../img/icons/car-subscibers-blue.svg') center / contain no-repeat;
+}
+.car__list--gold ul li:nth-child(4n + 1)::before {
+  background: url('../img/icons/car-play-gold.svg') center / contain no-repeat;
+}
+.car__list--gold ul li:nth-child(4n + 2)::before {
+  background: url('../img/icons/car-ball-gold.svg') center / contain no-repeat;
+}
+.car__list--gold ul li:nth-child(4n + 3)::before {
+  background: url('../img/icons/car-views-gold.svg') center / contain no-repeat;
+}
+.car__list--gold ul li:nth-child(4n)::before {
+  background: url('../img/icons/car-subscibers-gold.svg') center / contain no-repeat;
 }
 .model {
   position: relative;
@@ -719,8 +749,7 @@
 }
 @media (min-width: 111.8738em) {
   .thumbnails__videos {
-    display: grid;
-    grid-template-columns: 635fr 185fr;
+    grid-template-columns: 622fr 239fr;
   }
   .thumbnails__videos li:nth-of-type(3n + 1) {
     grid-row: span 2;
@@ -767,12 +796,15 @@
   .model__block {
     font-size: clamp(1.25rem, 0.746vw + 0.667rem, 1.563rem); /* 20/25 1250>1920 */
   }
-  .car__list {
+  .car__list ul {
     padding-block-start: 1.875rem; /* 30/16 */
   }
   .car__header,
-  .car__list {
+  .car__list ul {
     padding-inline-start: 4.0625rem; /* 65/16 */
+  }
+  .model--top {
+    padding-block-start: 7.3125rem; /* 117/16 */
   }
 }
 @media (min-width: 61.9988em) {
@@ -784,6 +816,9 @@
   }
   .steps__item:first-child {
     flex-basis: 20.278%; /* 307/1514 */
+  }
+  .thumbnails__videos {
+    max-inline-size: 53.75rem; /* 860/16 */
   }
   .thumbnails__container {
     grid-template-columns: repeat(2, 1fr);
@@ -891,9 +926,6 @@
     inline-size: 83.215%; /* 1170/1406 */
     padding-inline-start: 15.25rem; /* 244/16 */
   }
-  .model--top {
-    padding-block-start: 7.3125rem; /* 117/16 */
-  }
 }
 @media (min-width: 37.4988rem) {
   .persons {
@@ -911,11 +943,10 @@
 }
 @media (max-width: 111.8738em) and (min-width: 61.9988em) {
   .thumbnails__videos {
-    display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
   }
   .thumbnails__videos li:nth-of-type(3n + 1) {
-    flex-basis: 100%;
+    grid-column: span 2;
   }
   .brands__container {
     gap: 1.5rem; /* 24/16 */
@@ -930,6 +961,14 @@
 @media (max-width: 78.1238em) and (min-width: 29.9988em) {
   .guarantee__results {
     column-gap: 1.5rem;
+  }
+}
+@media (max-width: 61.9988em) and (min-width: 47.9988em) {
+  .thumbnails__videos {
+    grid-template-columns: 622fr 253fr;
+  }
+  .thumbnails__videos li:nth-of-type(3n + 1) {
+    grid-row: span 2;
   }
 }
 @media (max-width: 37.4988rem) and (min-width: 29.9988em) {
@@ -959,11 +998,14 @@
     gap: 1.5rem; /* 24/16 */
   }
   .car__header,
-  .car__list {
+  .car__list ul {
     margin-block-end: 2.5rem; /* 40/16 */
   }
   .model__block {
     font-size: 1.25rem; /* 20/16 */
+  }
+  .model--top .model__bg {
+    transform: translateY(-50%);
   }
 }
 @media (max-width: 61.9988em) {
@@ -1037,13 +1079,6 @@
   .optimization__person img {
     border-radius: 3rem;
   }
-  .thumbnails__videos {
-    display: grid;
-    grid-template-columns: 635fr 185fr;
-  }
-  .thumbnails__videos li:nth-of-type(3n + 1) {
-    grid-row: span 2;
-  }
   .optimization__picture--left,
   .thumbnails__btn--first {
     grid-row: 2;
@@ -1070,7 +1105,7 @@
     border-radius: 1rem;
     padding: 0.625rem; /* 10/16 */
   }
-  .car__list {
+  .car__list ul {
     row-gap: 1.5rem; /* 24/16 */
   }
 }
@@ -1116,6 +1151,14 @@
   .thumbnails__items li {
     flex-basis: 33.333%;
   }
+  .thumbnails__videos {
+    grid-template-columns: repeat(2, 1fr);
+    margin-inline: auto;
+  }
+  .thumbnails__videos li:nth-of-type(3n + 1) {
+    grid-column: span 2;
+  }
+
   .optimization__icons {
     margin-block-end: 1.5rem; /* 24/16 */
   }
@@ -1201,10 +1244,10 @@
     inset-block-start: 0.5625rem; /* 9/16 */
     inset-inline-start: 0.375rem; /* 6/16 */
   }
-  .car__item {
+  .car__list ul li {
     column-gap: 1.25rem; /* 20/16 */
   }
-  .car__icon {
+  .car__list ul li::before {
     flex-basis: 2.5rem; /* 40/16 */
   }
 }

@@ -110,11 +110,9 @@
   flex-shrink: 0;
 }
 .block__text {
+  font-weight: 400;
   font-size: 1.5625rem; /* 25/16 */
   line-height: normal;
-}
-.block__text span {
-  font-weight: 400;
 }
 .link--right {
   margin-inline-start: auto;
@@ -234,13 +232,6 @@
   }
 }
 @media (max-width: 111.8738em) {
-  .thumbnails__videos {
-    display: grid;
-    grid-template-columns: 635fr 185fr;
-  }
-  .thumbnails__videos li:nth-of-type(3n + 1) {
-    grid-row: span 2;
-  }
   .block__icon {
     flex-basis: 6rem; /* 96/16 */
   }
